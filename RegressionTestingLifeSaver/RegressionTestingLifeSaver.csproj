@@ -59,6 +59,9 @@
     <Compile Include="Pages\TestCaseStartPage.xaml.cs">
       <DependentUpon>TestCaseStartPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\TestPlanFinishPage.xaml.cs">
+      <DependentUpon>TestPlanFinishPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Services\MockDataSourceService.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -73,6 +76,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Pages\TestCaseStartPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\TestPlanFinishPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
