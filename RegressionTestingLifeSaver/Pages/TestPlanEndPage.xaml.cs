@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace RegressionTestingLifeSaver.Pages
 {
     /// <summary>
-    /// Interaction logic for TestPlanFinishPage.xaml
+    /// Interaction logic for TestPlanEndPage.xaml
     /// </summary>
-    public partial class TestPlanFinishPage : Page
+    public partial class TestPlanEndPage : Page
     {
-        public TestPlanFinishPage()
+        public TestPlanEndPage()
         {
             InitializeComponent();
         }

@@ -59,8 +59,8 @@
     <Compile Include="Pages\TestCaseStartPage.xaml.cs">
       <DependentUpon>TestCaseStartPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\TestPlanFinishPage.xaml.cs">
-      <DependentUpon>TestPlanFinishPage.xaml</DependentUpon>
+    <Compile Include="Pages\TestPlanEndPage.xaml.cs">
+      <DependentUpon>TestPlanEndPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Services\MockDataSourceService.cs" />
     <Page Include="MainWindow.xaml">
@@ -79,11 +79,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\TestPlanFinishPage.xaml">
+    <Page Include="Pages\TestPlanEndPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\TestPlanInfoPage.xaml">
+    <Page Include="Pages\TestPlanStartPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -100,8 +100,8 @@
     <Compile Include="Models\TestPlan.cs" />
     <Compile Include="Models\TestCase.cs" />
     <Compile Include="Models\Test.cs" />
-    <Compile Include="Pages\TestPlanInfoPage.xaml.cs">
-      <DependentUpon>TestPlanInfoPage.xaml</DependentUpon>
+    <Compile Include="Pages\TestPlanStartPage.xaml.cs">
+      <DependentUpon>TestPlanStartPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\TestCaseEndPage.xaml.cs">
       <DependentUpon>TestCaseEndPage.xaml</DependentUpon>

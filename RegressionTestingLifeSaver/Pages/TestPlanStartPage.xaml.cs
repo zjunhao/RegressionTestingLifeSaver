@@ -17,14 +17,14 @@ using System.Windows.Shapes;
 namespace RegressionTestingLifeSaver.Pages
 {
     /// <summary>
-    /// Interaction logic for ModuleInfoPage.xaml
+    /// Interaction logic for TestPlanStartPage.xaml
     /// </summary>
-    public partial class TestPlanInfoPage : Page
+    public partial class TestPlanStartPage : Page
     {
         private TestPlan _testPlan;
         private CurrentPosition _currPosition;
 
-        public TestPlanInfoPage(TestPlan testPlan, CurrentPosition currPosition)
+        public TestPlanStartPage(TestPlan testPlan, CurrentPosition currPosition)
         {
             InitializeComponent();
 

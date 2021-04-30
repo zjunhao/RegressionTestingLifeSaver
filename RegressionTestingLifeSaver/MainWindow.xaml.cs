@@ -30,12 +30,12 @@ namespace RegressionTestingLifeSaver
             TestPlan testPlan = MockDataSourceService.populateTestPlan(1993);
             CurrentPosition currPosition = new CurrentPosition(-1, -1);
 
-            TestPlanInfoPage testPlanInfoPage = new TestPlanInfoPage(testPlan, currPosition);
+            TestPlanStartPage testPlanStartPage = new TestPlanStartPage(testPlan, currPosition);
             //TestDetailPage testDetailPage = new TestDetailPage();
             //TestCaseStartPage testCaseStartPage = new TestCaseStartPage();
             //TestCaseEndPage testCaseEndPage = new TestCaseEndPage();
 
-            mainFrame.NavigationService.Navigate(testPlanInfoPage);
+            mainFrame.NavigationService.Navigate(testPlanStartPage);
         }
     }
 }
