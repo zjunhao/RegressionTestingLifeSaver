@@ -41,42 +41,24 @@
             </Grid.RowDefinitions>
 
             <TextBlock Text="Plan Name: " Grid.Row="0" Grid.Column="0"/>
-            <TextBlock Text="Unity Viewer" Grid.Row="0" Grid.Column="1" Margin="30 0 0 0" />
+            <TextBlock Text="{Binding Path=TestPlan.PlanName}" Grid.Row="0" Grid.Column="1" Margin="30 0 0 0" />
 
             <TextBlock Text="Tester: " Grid.Row="1" Grid.Column="0"/>
-            <TextBox Grid.Row="1" Grid.Column="1" Style="{StaticResource ModuleInfoTextbox}" />
+            <TextBox Text="{Binding Path=TestPlan.Tester}" Grid.Row="1" Grid.Column="1" Style="{StaticResource ModuleInfoTextbox}" />
 
             <TextBlock Text="Database: " Grid.Row="2" Grid.Column="0"/>
-            <TextBox Grid.Row="2" Grid.Column="1" Style="{StaticResource ModuleInfoTextbox}"/>
+            <TextBox Text="{Binding Path=TestPlan.Database}" Grid.Row="2" Grid.Column="1" Style="{StaticResource ModuleInfoTextbox}"/>
 
             <TextBlock Text="Client Type: " Grid.Row="3" Grid.Column="0"/>
-            <ComboBox Grid.Row="3" Grid.Column="1" Style="{StaticResource ModuleInfoTextbox}">
-                <ComboBoxItem>Unity Client</ComboBoxItem>
-                <ComboBoxItem>Thick Client - Core based</ComboBoxItem>
-                <ComboBoxItem>Thick Client - Classic</ComboBoxItem>
-                <ComboBoxItem>Chrome</ComboBoxItem>
-                <ComboBoxItem>Firefox</ComboBoxItem>
-                <ComboBoxItem>Internet Explorer</ComboBoxItem>
-                <ComboBoxItem>Edge</ComboBoxItem>
-                <ComboBoxItem>Safari</ComboBoxItem>
-                <ComboBoxItem>Opera</ComboBoxItem>
-                <ComboBoxItem>Desktop</ComboBoxItem>
-                <ComboBoxItem>Onbase Studio</ComboBoxItem>
-                <ComboBoxItem>Configuration</ComboBoxItem>
-                <ComboBoxItem>iPhone</ComboBoxItem>
-                <ComboBoxItem>iPad</ComboBoxItem>
-                <ComboBoxItem>Android Phone</ComboBoxItem>
-                <ComboBoxItem>Android Tablet</ComboBoxItem>
-                <ComboBoxItem>Windows Tablet</ComboBoxItem>
-                <ComboBoxItem>MS Office</ComboBoxItem>
-                <ComboBoxItem>MS Outlook</ComboBoxItem>
-            </ComboBox>
+            <ComboBox Grid.Row="3" Grid.Column="1" Style="{StaticResource ModuleInfoTextbox}"
+                      SelectedItem="{Binding Path=TestPlan.ClientType}"
+                      ItemsSource="{Binding Path=ClientTypes}" />
 
             <TextBlock Text="Client Version: " Grid.Row="4" Grid.Column="0"/>
-            <TextBox Grid.Row="4" Grid.Column="1" Style="{StaticResource ModuleInfoTextbox}"/>
+            <TextBox Text="{Binding Path=TestPlan.ClientVersion}" Grid.Row="4" Grid.Column="1" Style="{StaticResource ModuleInfoTextbox}"/>
 
             <TextBlock Text="Build Number: " Grid.Row="5" Grid.Column="0"/>
-            <TextBox Grid.Row="5" Grid.Column="1" Style="{StaticResource ModuleInfoTextbox}"/>
+            <TextBox Text="{Binding Path=TestPlan.BuildNumber}" Grid.Row="5" Grid.Column="1" Style="{StaticResource ModuleInfoTextbox}"/>
 
             <Button Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Content="Start Testing!" Width="300" Height="50" Click="StartTestButton_Click"  />
         </Grid>

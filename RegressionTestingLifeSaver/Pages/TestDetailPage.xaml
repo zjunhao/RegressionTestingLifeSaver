@@ -37,16 +37,20 @@
             
             <!-- Test Info Part -->
             <TextBlock Grid.Row="0" Grid.Column="0" Text="Criticality Level" Margin="0 0 0 10"/>
-            <TextBlock Grid.Row="0" Grid.Column="1" Text="Ciriticality-1 High" Margin="5 0 0 10"/>
+            <TextBlock Grid.Row="0" Grid.Column="1" Margin="5 0 0 10"
+                       Text="{Binding Path=CurrentTest.Criticality}"/>
 
             <TextBlock Grid.Row="1" Grid.Column="0" Text="Test Name" Margin="0 0 0 10"/>
-            <TextBox Grid.Row="1" Grid.Column="1"  Margin="5 0 0 10" Height="50" Style="{StaticResource TestDetailPageWrappableTextboxes}"/>
+            <TextBox Grid.Row="1" Grid.Column="1"  Margin="5 0 0 10" Height="50" Style="{StaticResource TestDetailPageWrappableTextboxes}" 
+                     Text="{Binding Path=CurrentTest.TestName}" IsReadOnly="True"/>
 
             <TextBlock Grid.Row="2" Grid.Column="0" Text="Test Steps" Margin="0 0 0 10"/>
-            <TextBox Grid.Row="2" Grid.Column="1"  Margin="5 0 0 10" Style="{StaticResource TestDetailPageWrappableTextboxes}"/>
+            <TextBox Grid.Row="2" Grid.Column="1"  Margin="5 0 0 10" Style="{StaticResource TestDetailPageWrappableTextboxes}" 
+                     Text="{Binding Path=CurrentTest.TestSteps}" IsReadOnly="True"/>
 
             <TextBlock Grid.Row="3" Grid.Column="0" Text="Expected Result" Margin="0 0 0 10"/>
-            <TextBox Grid.Row="3" Grid.Column="1"  Margin="5 0 0 10" Style="{StaticResource TestDetailPageWrappableTextboxes}"/>
+            <TextBox Grid.Row="3" Grid.Column="1"  Margin="5 0 0 10" Style="{StaticResource TestDetailPageWrappableTextboxes}" 
+                     Text="{Binding Path=CurrentTest.ExpectedResult}" IsReadOnly="True"/>
 
             <!-- Testers Filling Part -->
             <TextBlock Grid.Row="4" Grid.Column="0" Text="Result" Margin="0 0 0 10"/>
@@ -57,7 +61,8 @@
             </StackPanel>
 
             <TextBlock Grid.Row="5" Grid.Column="0" Text="Comment" Margin="0 0 0 10"/>
-            <TextBox Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3" Margin="5 0 0 10" Style="{StaticResource TestDetailPageWrappableTextboxes}"/>
+            <TextBox Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3" Margin="5 0 0 10" Style="{StaticResource TestDetailPageWrappableTextboxes}" 
+                     Text="{Binding Path=CurrentTest.Comment}"/>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2">
                 <!--<Button Content="Start Of Section" />-->

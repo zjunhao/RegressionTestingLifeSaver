@@ -28,7 +28,7 @@ namespace RegressionTestingLifeSaver
             InitializeComponent();
 
             TestPlan testPlan = MockDataSourceService.populateTestPlan(1993);
-            CurrentPosition currPosition = new CurrentPosition(-1, -1);
+            CurrentPosition currPosition = new CurrentPosition(0, 0);
 
             TestPlanStartPage testPlanStartPage = new TestPlanStartPage(testPlan, currPosition);
             //TestDetailPage testDetailPage = new TestDetailPage();

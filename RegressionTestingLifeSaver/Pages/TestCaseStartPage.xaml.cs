@@ -21,15 +21,20 @@ namespace RegressionTestingLifeSaver.Pages
     /// </summary>
     public partial class TestCaseStartPage : Page
     {
-        private TestPlan _testPlan;
         private CurrentPosition _currPosition;
+        public TestPlan TestPlan { get; set; }
 
         public TestCaseStartPage(TestPlan testPlan, CurrentPosition currPosition)
         {
             InitializeComponent();
 
-            this._testPlan = testPlan;
+            DataContext = this;
+
+            this.TestPlan = testPlan;
             this._currPosition = currPosition;
+
+            testCaseTextBlock.Text = TestPlan.testCases[1].CaseName;
+
         }
 
         private void PreviousButton_Click(object sender, RoutedEventArgs e)
@@ -39,7 +44,7 @@ namespace RegressionTestingLifeSaver.Pages
 
         private void NextButton_Click(object sender, RoutedEventArgs e)
         {
-            TestDetailPage testDetailPage = new TestDetailPage(_testPlan, _currPosition);
+            TestDetailPage testDetailPage = new TestDetailPage(TestPlan, _currPosition);
             this.NavigationService.Navigate(testDetailPage);
         }
     }

@@ -17,7 +17,7 @@ namespace RegressionTestingLifeSaver.Models
         public string PlanName { get; set; }
         public string Tester { get; set; }
         public string Database { get; set; }
-        public ClientTypeEnum ClientType { get; set; }
+        public string ClientType { get; set; }
         public string ClientVersion { get; set; }
         public string BuildNumber { get; set; }
     }

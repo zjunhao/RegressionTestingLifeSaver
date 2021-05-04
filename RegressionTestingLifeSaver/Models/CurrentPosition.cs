@@ -24,7 +24,7 @@ namespace RegressionTestingLifeSaver.Models
 
         /// <summary>
         /// Test Case index in TestPlan.testCases list.
-        /// -1 means in TestPlan Info page
+        /// -1 means in TestPlan Start page
         /// </summary>
         public int TestCaseIndex { get; set; }
 

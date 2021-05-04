@@ -1,6 +1,7 @@
 ﻿using RegressionTestingLifeSaver.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,15 +22,21 @@ namespace RegressionTestingLifeSaver.Pages
     /// </summary>
     public partial class TestDetailPage : Page
     {
-        private TestPlan _testPlan;
+        public TestPlan TestPlan { get; set; }
+        public Test CurrentTest { get; set; }
+
         private CurrentPosition _currPosition;
 
         public TestDetailPage(TestPlan testPlan, CurrentPosition currPosition)
         {
             InitializeComponent();
 
-            this._testPlan = testPlan;
+            DataContext = this;
+
+            this.TestPlan = testPlan;
             this._currPosition = currPosition;
+
+            this.CurrentTest = TestPlan.testCases[_currPosition.TestCaseIndex].tests[_currPosition.TestIndex];
         }
     }
 }
