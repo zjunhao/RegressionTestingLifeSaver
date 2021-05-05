@@ -22,14 +22,12 @@ namespace RegressionTestingLifeSaver.Pages
     public partial class TestCaseEndPage : Page
     {
         TestPlan _testPlan;
-        CurrentPosition _currPosition;
 
-        public TestCaseEndPage(TestPlan testPlan, CurrentPosition currPosition)
+        public TestCaseEndPage(TestPlan testPlan)
         {
             InitializeComponent();
 
             this._testPlan = testPlan;
-            this._currPosition = currPosition;
         }
     }
 }

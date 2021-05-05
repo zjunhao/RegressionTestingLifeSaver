@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using RegressionTestingLifeSaver.Models;
 using RegressionTestingLifeSaver.Services;
+using RegressionTestingLifeSaver.ViewModels;
 
 namespace RegressionTestingLifeSaver
 {
@@ -28,12 +29,13 @@ namespace RegressionTestingLifeSaver
             InitializeComponent();
 
             TestPlan testPlan = MockDataSourceService.populateTestPlan(1993);
-            CurrentPosition currPosition = new CurrentPosition(0, 0);
+            TestPlanViewModel testPlanViewModel = new TestPlanViewModel(testPlan, PageIndex.TestPlanStart, 0, 0);
 
-            TestPlanStartPage testPlanStartPage = new TestPlanStartPage(testPlan, currPosition);
-            //TestDetailPage testDetailPage = new TestDetailPage();
+            TestPlanStartPage testPlanStartPage = new TestPlanStartPage(testPlanViewModel);
             //TestCaseStartPage testCaseStartPage = new TestCaseStartPage();
+            //TestDetailPage testDetailPage = new TestDetailPage();
             //TestCaseEndPage testCaseEndPage = new TestCaseEndPage();
+            //TestPlanEndPage testPlanEndPage = new TestPlanEndPage();
 
             mainFrame.NavigationService.Navigate(testPlanStartPage);
         }

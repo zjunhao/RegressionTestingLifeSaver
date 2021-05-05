@@ -1,4 +1,5 @@
 ﻿using RegressionTestingLifeSaver.Models;
+using RegressionTestingLifeSaver.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -22,13 +23,7 @@ namespace RegressionTestingLifeSaver.Pages
     /// </summary>
     public partial class TestPlanStartPage : Page
     {
-
-        private CurrentPosition _currPosition;
-
-        /// <summary>
-        /// Stores all info needed for a test plan.
-        /// </summary>
-        public TestPlan TestPlan { get; set; }
+        public TestPlanViewModel testPlanViewModel;
 
         /// <summary>
         /// All available client types for testing.
@@ -37,15 +32,14 @@ namespace RegressionTestingLifeSaver.Pages
 
 
 
-        public TestPlanStartPage(TestPlan testPlan, CurrentPosition currPosition)
+        public TestPlanStartPage(TestPlanViewModel testPlanViewModel)
         {
             InitializeComponent();
 
-            this._currPosition = currPosition;
-            this.TestPlan = testPlan;
             this.ClientTypes = GetClientTypes();
 
-            DataContext = this;
+            this.testPlanViewModel = testPlanViewModel;
+            DataContext = testPlanViewModel;
         }
 
         /// <summary>
@@ -80,8 +74,8 @@ namespace RegressionTestingLifeSaver.Pages
 
         private void StartTestButton_Click(object sender, RoutedEventArgs e)
         {
-            TestCaseStartPage testCaseStartPage = new TestCaseStartPage(TestPlan, _currPosition);
-            this.NavigationService.Navigate(testCaseStartPage);
+            //TestCaseStartPage testCaseStartPage = new TestCaseStartPage(TestPlan);
+            //this.NavigationService.Navigate(testCaseStartPage);
         }
 
     }

@@ -25,18 +25,15 @@ namespace RegressionTestingLifeSaver.Pages
         public TestPlan TestPlan { get; set; }
         public Test CurrentTest { get; set; }
 
-        private CurrentPosition _currPosition;
 
-        public TestDetailPage(TestPlan testPlan, CurrentPosition currPosition)
+        public TestDetailPage(TestPlan testPlan)
         {
             InitializeComponent();
 
             DataContext = this;
 
             this.TestPlan = testPlan;
-            this._currPosition = currPosition;
 
-            this.CurrentTest = TestPlan.testCases[_currPosition.TestCaseIndex].tests[_currPosition.TestIndex];
         }
     }
 }

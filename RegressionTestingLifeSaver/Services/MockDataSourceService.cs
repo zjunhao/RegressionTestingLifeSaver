@@ -137,34 +137,34 @@ Be sure to test in the external and embedded viewer",
             };
 
             // Add tests to testplan
-            testPlan.testCases = new List<TestCase>();
+            testPlan.TestCases = new List<TestCase>();
 
             TestCase viewerPermission = new TestCase()
             {
                 CaseName = "Viewer Permissions"
             };
-            viewerPermission.tests = new List<Test>();
-            viewerPermission.tests.Add(viewerPermmsions1);
-            viewerPermission.tests.Add(viewerPermmsions2);
-            testPlan.testCases.Add(viewerPermission);
+            viewerPermission.Tests = new List<Test>();
+            viewerPermission.Tests.Add(viewerPermmsions1);
+            viewerPermission.Tests.Add(viewerPermmsions2);
+            testPlan.TestCases.Add(viewerPermission);
 
             TestCase imageViewer = new TestCase()
             {
                 CaseName = "Image Viewers"
             };
-            imageViewer.tests = new List<Test>();
-            imageViewer.tests.Add(imageViewer1);
-            imageViewer.tests.Add(imageViewer2);
-            imageViewer.tests.Add(imageViewer3);
-            testPlan.testCases.Add(imageViewer);
+            imageViewer.Tests = new List<Test>();
+            imageViewer.Tests.Add(imageViewer1);
+            imageViewer.Tests.Add(imageViewer2);
+            imageViewer.Tests.Add(imageViewer3);
+            testPlan.TestCases.Add(imageViewer);
 
             TestCase pdfViewer = new TestCase()
             {
                 CaseName = "PDF Viewers"
             };
-            viewerPermission.tests = new List<Test>();
-            viewerPermission.tests.Add(pdfViewer1);
-            testPlan.testCases.Add(pdfViewer);
+            viewerPermission.Tests = new List<Test>();
+            viewerPermission.Tests.Add(pdfViewer1);
+            testPlan.TestCases.Add(pdfViewer);
 
             return testPlan;
         }
