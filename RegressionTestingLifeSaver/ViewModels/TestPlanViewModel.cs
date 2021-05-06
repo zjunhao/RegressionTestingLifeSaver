@@ -19,7 +19,7 @@ namespace RegressionTestingLifeSaver.ViewModels
         public Test CurrentTest { get; private set; }
 
         // ---------------- Test page indexes ------------------
-        public PageIndex currentPageIndex;
+        public PageIndex CurrentPageIndex;
 
         // Warning:
         // You must update CurrentTestCaseIndex before CurrentTestIndex;
@@ -59,6 +59,10 @@ namespace RegressionTestingLifeSaver.ViewModels
             }
         }
 
+        // ------------------------- events -------------------------------
+
+
+
         #endregion
 
         #region Constructor
@@ -72,7 +76,7 @@ namespace RegressionTestingLifeSaver.ViewModels
                 throw new ArgumentOutOfRangeException("testIndex larger than number of tests in testcase");
 
             this.TestPlan = testPlan;
-            this.currentPageIndex = pageIndex;
+            this.CurrentPageIndex = pageIndex;
             this.CurrentTestCaseIndex = testCaseIndex;
             this.CurrentTestIndex = testIndex;
         }
@@ -84,23 +88,23 @@ namespace RegressionTestingLifeSaver.ViewModels
             // TODO: Didn't consider scenario when test cases are empty, tests in test cases are empty, need adding logic to handle it, maybe already handled by OutOfRangeException check when setting index.
 
             // Test Plan Start
-            if (currentPageIndex == PageIndex.TestPlanStart)
+            if (CurrentPageIndex == PageIndex.TestPlanStart)
             {
-                currentPageIndex = PageIndex.TestCaseStart;
+                CurrentPageIndex = PageIndex.TestCaseStart;
                 CurrentTestCaseIndex = 0;
                 CurrentTestIndex = 0;
             }
 
 
             // Test Case Start
-            if (currentPageIndex == PageIndex.TestCaseStart)
+            if (CurrentPageIndex == PageIndex.TestCaseStart)
             {
-                currentPageIndex = PageIndex.TestDetail;
+                CurrentPageIndex = PageIndex.TestDetail;
             }
 
 
             // Test
-            if (currentPageIndex == PageIndex.TestDetail)
+            if (CurrentPageIndex == PageIndex.TestDetail)
             {
                 if (CurrentTestIndex < CurrentTestCase.Tests.Count() - 1) // has next test in test case
                 {
@@ -108,28 +112,28 @@ namespace RegressionTestingLifeSaver.ViewModels
                 }
                 else // currently at last test inside test case.
                 {
-                    currentPageIndex = PageIndex.TestCaseEnd;
+                    CurrentPageIndex = PageIndex.TestCaseEnd;
                 }
             }
 
 
             // Test Case End
-            if (currentPageIndex == PageIndex.TestCaseEnd)
+            if (CurrentPageIndex == PageIndex.TestCaseEnd)
             {
                 if (CurrentTestCaseIndex < TestPlan.TestCases.Count() - 1) // has next test case to test
                 {
-                    currentPageIndex = PageIndex.TestCaseStart;
+                    CurrentPageIndex = PageIndex.TestCaseStart;
                     CurrentTestCaseIndex = 0;
                     CurrentTestIndex = 0;
                 }
                 else // currently at last test case inside test plan
                 {
-                    currentPageIndex = PageIndex.TestPlanEnd;
+                    CurrentPageIndex = PageIndex.TestPlanEnd;
                 }
             }
 
             // Test Plan End
-            if (currentPageIndex == PageIndex.TestPlanEnd)
+            if (CurrentPageIndex == PageIndex.TestPlanEnd)
             {
                 // Next butto should be disabled.
             }

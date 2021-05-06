@@ -39,7 +39,7 @@ namespace RegressionTestingLifeSaver.Pages
             this.ClientTypes = GetClientTypes();
 
             this.testPlanViewModel = testPlanViewModel;
-            DataContext = testPlanViewModel;
+            DataContext = this.testPlanViewModel;
         }
 
         /// <summary>

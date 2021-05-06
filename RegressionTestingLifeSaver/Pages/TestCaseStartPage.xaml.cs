@@ -1,4 +1,5 @@
 ﻿using RegressionTestingLifeSaver.Models;
+using RegressionTestingLifeSaver.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,18 +22,17 @@ namespace RegressionTestingLifeSaver.Pages
     /// </summary>
     public partial class TestCaseStartPage : Page
     {
-        public TestPlan TestPlan { get; set; }
+        public TestPlanViewModel testPlanViewModel;
 
-        public TestCaseStartPage(TestPlan testPlan)
+        public TestCaseStartPage(TestPlanViewModel testPlanViewModel)
         {
             InitializeComponent();
 
-            DataContext = this;
+            this.testPlanViewModel = testPlanViewModel;
+            DataContext = this.testPlanViewModel;
 
-            this.TestPlan = testPlan;
 
-            testCaseTextBlock.Text = TestPlan.TestCases[1].CaseName;
-
+            TestCaseName.Text = this.testPlanViewModel.CurrentTestCase.CaseName;
         }
 
         private void PreviousButton_Click(object sender, RoutedEventArgs e)
@@ -42,8 +42,8 @@ namespace RegressionTestingLifeSaver.Pages
 
         private void NextButton_Click(object sender, RoutedEventArgs e)
         {
-            TestDetailPage testDetailPage = new TestDetailPage(TestPlan);
-            this.NavigationService.Navigate(testDetailPage);
+            //TestDetailPage testDetailPage = new TestDetailPage(TestPlan);
+            //this.NavigationService.Navigate(testDetailPage);
         }
     }
 }

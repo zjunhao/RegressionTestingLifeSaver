@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RegressionTestingLifeSaver.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,14 @@ namespace RegressionTestingLifeSaver.Pages
     /// </summary>
     public partial class TestPlanEndPage : Page
     {
-        public TestPlanEndPage()
+        public TestPlanViewModel testPlanViewModel;
+
+        public TestPlanEndPage(TestPlanViewModel testPlanViewModel)
         {
             InitializeComponent();
+
+            this.testPlanViewModel = testPlanViewModel;
+            DataContext = this.testPlanViewModel;
         }
     }
 }

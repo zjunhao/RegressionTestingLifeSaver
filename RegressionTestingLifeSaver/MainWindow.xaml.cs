@@ -32,12 +32,12 @@ namespace RegressionTestingLifeSaver
             TestPlanViewModel testPlanViewModel = new TestPlanViewModel(testPlan, PageIndex.TestPlanStart, 0, 0);
 
             TestPlanStartPage testPlanStartPage = new TestPlanStartPage(testPlanViewModel);
-            //TestCaseStartPage testCaseStartPage = new TestCaseStartPage();
-            //TestDetailPage testDetailPage = new TestDetailPage();
-            //TestCaseEndPage testCaseEndPage = new TestCaseEndPage();
-            //TestPlanEndPage testPlanEndPage = new TestPlanEndPage();
+            TestCaseStartPage testCaseStartPage = new TestCaseStartPage(testPlanViewModel);
+            TestDetailPage testDetailPage = new TestDetailPage(testPlanViewModel);
+            TestCaseEndPage testCaseEndPage = new TestCaseEndPage(testPlanViewModel);
+            TestPlanEndPage testPlanEndPage = new TestPlanEndPage(testPlanViewModel);
 
-            mainFrame.NavigationService.Navigate(testPlanStartPage);
+            mainFrame.NavigationService.Navigate(testCaseStartPage);
         }
     }
 }

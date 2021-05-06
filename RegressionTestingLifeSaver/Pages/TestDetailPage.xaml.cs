@@ -1,4 +1,5 @@
 ﻿using RegressionTestingLifeSaver.Models;
+using RegressionTestingLifeSaver.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -22,18 +23,15 @@ namespace RegressionTestingLifeSaver.Pages
     /// </summary>
     public partial class TestDetailPage : Page
     {
-        public TestPlan TestPlan { get; set; }
-        public Test CurrentTest { get; set; }
+        public TestPlanViewModel testPlanViewModel;
 
 
-        public TestDetailPage(TestPlan testPlan)
+        public TestDetailPage(TestPlanViewModel testPlanViewModel)
         {
             InitializeComponent();
 
-            DataContext = this;
-
-            this.TestPlan = testPlan;
-
+            this.testPlanViewModel = testPlanViewModel;
+            DataContext = this.testPlanViewModel;
         }
     }
 }

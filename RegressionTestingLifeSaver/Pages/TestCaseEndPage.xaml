@@ -22,7 +22,8 @@
 
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Notes"/>
-                <TextBox Width="750" Height="120" Margin="10 0 0 20" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible"/>
+                <TextBox Width="750" Height="120" Margin="10 0 0 20" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible"
+                         Text="{Binding CurrentTestCase.Note}"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
