@@ -162,8 +162,8 @@ Be sure to test in the external and embedded viewer",
             {
                 CaseName = "PDF Viewers"
             };
-            viewerPermission.Tests = new List<Test>();
-            viewerPermission.Tests.Add(pdfViewer1);
+            pdfViewer.Tests = new List<Test>();
+            pdfViewer.Tests.Add(pdfViewer1);
             testPlan.TestCases.Add(pdfViewer);
 
             return testPlan;

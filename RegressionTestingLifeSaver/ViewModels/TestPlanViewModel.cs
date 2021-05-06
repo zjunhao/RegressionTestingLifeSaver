@@ -60,8 +60,8 @@ namespace RegressionTestingLifeSaver.ViewModels
         }
 
         // ------------------------- events -------------------------------
-
-
+        public delegate void MoveNextClickedDelegate();
+        public event MoveNextClickedDelegate MoveNextClicked;
 
         #endregion
 
@@ -87,55 +87,54 @@ namespace RegressionTestingLifeSaver.ViewModels
         {
             // TODO: Didn't consider scenario when test cases are empty, tests in test cases are empty, need adding logic to handle it, maybe already handled by OutOfRangeException check when setting index.
 
-            // Test Plan Start
-            if (CurrentPageIndex == PageIndex.TestPlanStart)
+            if (CurrentPageIndex == PageIndex.TestPlanStart)            // Test Plan Start
             {
                 CurrentPageIndex = PageIndex.TestCaseStart;
                 CurrentTestCaseIndex = 0;
                 CurrentTestIndex = 0;
             }
-
-
-            // Test Case Start
-            if (CurrentPageIndex == PageIndex.TestCaseStart)
+            else if (CurrentPageIndex == PageIndex.TestCaseStart)       // Test Case Start
             {
                 CurrentPageIndex = PageIndex.TestDetail;
             }
-
-
-            // Test
-            if (CurrentPageIndex == PageIndex.TestDetail)
+            else if (CurrentPageIndex == PageIndex.TestDetail)          // Test
             {
-                if (CurrentTestIndex < CurrentTestCase.Tests.Count() - 1) // has next test in test case
+                if (CurrentTestIndex < CurrentTestCase.Tests.Count() - 1) 
                 {
+                    // has next test in test case
                     CurrentTestIndex++;
                 }
-                else // currently at last test inside test case.
+                else 
                 {
+                    // currently at last test inside test case.
                     CurrentPageIndex = PageIndex.TestCaseEnd;
                 }
             }
-
-
-            // Test Case End
-            if (CurrentPageIndex == PageIndex.TestCaseEnd)
+            else if (CurrentPageIndex == PageIndex.TestCaseEnd)        // Test Case End
             {
-                if (CurrentTestCaseIndex < TestPlan.TestCases.Count() - 1) // has next test case to test
+                if (CurrentTestCaseIndex < TestPlan.TestCases.Count() - 1) 
                 {
+                    // has next test case to test
                     CurrentPageIndex = PageIndex.TestCaseStart;
-                    CurrentTestCaseIndex = 0;
+                    CurrentTestCaseIndex++;
                     CurrentTestIndex = 0;
                 }
-                else // currently at last test case inside test plan
+                else 
                 {
+                    // currently at last test case inside test plan
                     CurrentPageIndex = PageIndex.TestPlanEnd;
                 }
             }
-
-            // Test Plan End
-            if (CurrentPageIndex == PageIndex.TestPlanEnd)
+            else if (CurrentPageIndex == PageIndex.TestPlanEnd)        // Test Plan End
             {
                 // Next butto should be disabled.
+            }
+
+            // TODO: don't fire this event if moving next not succeed ??
+            // Fire MoveNextClicked event
+            if (MoveNextClicked != null)
+            {
+                MoveNextClicked();
             }
         }
 

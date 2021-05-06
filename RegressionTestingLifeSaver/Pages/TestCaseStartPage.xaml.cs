@@ -42,8 +42,7 @@ namespace RegressionTestingLifeSaver.Pages
 
         private void NextButton_Click(object sender, RoutedEventArgs e)
         {
-            //TestDetailPage testDetailPage = new TestDetailPage(TestPlan);
-            //this.NavigationService.Navigate(testDetailPage);
+            testPlanViewModel.MoveNext();
         }
     }
 }

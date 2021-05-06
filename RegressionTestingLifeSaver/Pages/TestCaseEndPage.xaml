@@ -28,7 +28,7 @@
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button Content="Back To Current Test Case" Height="30" Width="150" Margin="0 0 5 0" />
-                <Button Content="Continue To Next Test Case" Height="30" Width="150" Margin="5 0 0 0" />
+                <Button Content="Continue To Next Test Case" Height="30" Width="150" Margin="5 0 0 0" Click="MoveNextButton_Click"/>
             </StackPanel>
         </StackPanel>
     </Border>

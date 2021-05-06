@@ -74,8 +74,7 @@ namespace RegressionTestingLifeSaver.Pages
 
         private void StartTestButton_Click(object sender, RoutedEventArgs e)
         {
-            //TestCaseStartPage testCaseStartPage = new TestCaseStartPage(TestPlan);
-            //this.NavigationService.Navigate(testCaseStartPage);
+            testPlanViewModel.MoveNext();
         }
 
     }

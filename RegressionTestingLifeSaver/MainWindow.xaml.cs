@@ -24,20 +24,55 @@ namespace RegressionTestingLifeSaver
     /// </summary>
     public partial class MainWindow : Window
     {
+        TestPlanViewModel testPlanViewModel;
+
+        TestPlanStartPage testPlanStartPage;
+        TestCaseStartPage testCaseStartPage;
+        TestDetailPage testDetailPage;
+        TestCaseEndPage testCaseEndPage;
+        TestPlanEndPage testPlanEndPage;
+
         public MainWindow()
         {
             InitializeComponent();
 
             TestPlan testPlan = MockDataSourceService.populateTestPlan(1993);
-            TestPlanViewModel testPlanViewModel = new TestPlanViewModel(testPlan, PageIndex.TestPlanStart, 0, 0);
+            
+            this.testPlanViewModel = new TestPlanViewModel(testPlan, PageIndex.TestPlanStart, 0, 0);
+            this.testPlanViewModel.MoveNextClicked += MoveNextHandler;
 
-            TestPlanStartPage testPlanStartPage = new TestPlanStartPage(testPlanViewModel);
-            TestCaseStartPage testCaseStartPage = new TestCaseStartPage(testPlanViewModel);
-            TestDetailPage testDetailPage = new TestDetailPage(testPlanViewModel);
-            TestCaseEndPage testCaseEndPage = new TestCaseEndPage(testPlanViewModel);
-            TestPlanEndPage testPlanEndPage = new TestPlanEndPage(testPlanViewModel);
+            this.testPlanStartPage = new TestPlanStartPage(this.testPlanViewModel);
+            this.testCaseStartPage = new TestCaseStartPage(this.testPlanViewModel);
+            this.testDetailPage = new TestDetailPage(this.testPlanViewModel);
+            this.testCaseEndPage = new TestCaseEndPage(this.testPlanViewModel);
+            this.testPlanEndPage = new TestPlanEndPage(this.testPlanViewModel);
 
-            mainFrame.NavigationService.Navigate(testCaseStartPage);
+
+            mainFrame.NavigationService.Navigate(this.testPlanStartPage);
+        }
+
+        private void MoveNextHandler()
+        {
+            if (testPlanViewModel.CurrentPageIndex == PageIndex.TestDetail)
+            {
+                mainFrame.NavigationService.Navigate(this.testDetailPage);
+            }
+            else if (testPlanViewModel.CurrentPageIndex == PageIndex.TestCaseStart)
+            {
+                mainFrame.NavigationService.Navigate(this.testCaseStartPage);
+            }
+            else if (testPlanViewModel.CurrentPageIndex == PageIndex.TestCaseEnd)
+            {
+                mainFrame.NavigationService.Navigate(this.testCaseEndPage);
+            }
+            else if (testPlanViewModel.CurrentPageIndex == PageIndex.TestPlanEnd)
+            {
+                mainFrame.NavigationService.Navigate(this.testPlanEndPage);
+            }
+            else if (testPlanViewModel.CurrentPageIndex == PageIndex.TestPlanStart)
+            {
+                mainFrame.NavigationService.Navigate(this.testPlanStartPage);
+            }
         }
     }
 }
