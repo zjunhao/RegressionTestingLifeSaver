@@ -35,6 +35,11 @@ namespace RegressionTestingLifeSaver.Pages
         private void MoveNextButton_Click(object sender, RoutedEventArgs e)
         {
             testPlanViewModel.MoveNext();
+        }        
+        
+        private void MovePreviousButton_Click(object sender, RoutedEventArgs e)
+        {
+            testPlanViewModel.MovePrevious();
         }
     }
 }

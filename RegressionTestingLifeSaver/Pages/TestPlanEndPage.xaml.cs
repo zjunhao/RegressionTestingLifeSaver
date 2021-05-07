@@ -30,5 +30,10 @@ namespace RegressionTestingLifeSaver.Pages
             this.testPlanViewModel = testPlanViewModel;
             DataContext = this.testPlanViewModel;
         }
+
+        private void MovePreviousButton_Click(object sender, RoutedEventArgs e)
+        {
+            testPlanViewModel.MovePrevious();
+        }
     }
 }

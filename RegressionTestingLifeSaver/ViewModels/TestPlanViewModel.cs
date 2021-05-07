@@ -81,6 +81,9 @@ namespace RegressionTestingLifeSaver.ViewModels
         public delegate void MoveNextClickedDelegate();
         public event MoveNextClickedDelegate MoveNextClicked;
 
+        public delegate void MovePreviousClickedDelegate();
+        public event MovePreviousClickedDelegate MovePreviousClicked;
+
         #endregion
 
         #region Constructor
@@ -158,7 +161,49 @@ namespace RegressionTestingLifeSaver.ViewModels
 
         public void MovePrevious()
         {
+            if (CurrentPageIndex == PageIndex.TestPlanEnd)    // Test Plan End
+            {
+                CurrentPageIndex = PageIndex.TestCaseEnd;
+                CurrentTestCaseIndex = TestPlan.TestCases.Count() - 1;
+                CurrentTestIndex = CurrentTestCase.Tests.Count() - 1;
+            } 
+            else if (CurrentPageIndex == PageIndex.TestCaseEnd)
+            {
+                CurrentPageIndex = PageIndex.TestDetail;
+            }
+            else if (CurrentPageIndex == PageIndex.TestDetail)
+            {
+                if (CurrentTestIndex > 0)
+                {
+                    CurrentTestIndex--;
+                }
+                else
+                {
+                    CurrentPageIndex = PageIndex.TestCaseStart;
+                }
+            }
+            else if (CurrentPageIndex == PageIndex.TestCaseStart)
+            {
+                if (CurrentTestCaseIndex > 0)
+                {
+                    CurrentPageIndex = PageIndex.TestCaseEnd;
+                    CurrentTestCaseIndex--;
+                    CurrentTestIndex = CurrentTestCase.Tests.Count() - 1;
+                } 
+                else
+                {
+                    CurrentPageIndex = PageIndex.TestPlanStart;
+                }
+            }
+            else if (CurrentPageIndex == PageIndex.TestPlanStart)
+            {
 
+            }
+
+            if (MovePreviousClicked != null)
+            {
+                MovePreviousClicked();
+            }
         }
 
 

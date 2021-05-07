@@ -11,7 +11,7 @@
     <Border Padding="20 10" Background="#E0E0E0">
         <StackPanel VerticalAlignment="Center">
             <TextBlock HorizontalAlignment="Center" FontSize="20" Text="Congrats you're done with this test plan." />
-            <Button HorizontalAlignment="Center" Width="50" Margin="0 40 0 10" Content="Back" />
+            <Button HorizontalAlignment="Center" Width="50" Margin="0 40 0 10" Content="Back" Click="MovePreviousButton_Click" />
             <Button HorizontalAlignment="Center" Width="100" Content="Upload to HSIDB"/>
         </StackPanel>
     </Border>
