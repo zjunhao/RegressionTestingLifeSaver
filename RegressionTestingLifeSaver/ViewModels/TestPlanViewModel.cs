@@ -8,15 +8,33 @@ using System.Threading.Tasks;
 namespace RegressionTestingLifeSaver.ViewModels
 {
     // TODO: Add exception handler so that user does not lose data already input if excpetion occurs.
-    public class TestPlanViewModel
+    public class TestPlanViewModel : ObservableObject
     {
         #region Member Variables
         // ---------------- Test information -------------------
         public TestPlan TestPlan { get; set; }
 
-        public TestCase CurrentTestCase { get; private set; }
+        private TestCase _currentTestCase;
+        public TestCase CurrentTestCase
+        {
+            get { return _currentTestCase; }
+            private set 
+            { 
+                _currentTestCase = value;
+                OnPropertyChanged("CurrentTestCase");
+            }
+        }
 
-        public Test CurrentTest { get; private set; }
+        private Test _currentTest;
+        public Test CurrentTest
+        {
+            get { return _currentTest; }
+            private set 
+            { 
+                _currentTest = value;
+                OnPropertyChanged("CurrentTest");
+            }
+        }
 
         // ---------------- Test page indexes ------------------
         public PageIndex CurrentPageIndex;

@@ -11,7 +11,8 @@
     <Border Padding="20 10" Background="#E0E0E0">
         <StackPanel VerticalAlignment="Center">
             <TextBlock HorizontalAlignment="Center" Text="About to start test case: "  FontSize="20"/>
-            <TextBlock Name="TestCaseName"  Margin="0 10 0 30" HorizontalAlignment="Center" FontSize="20" FontStyle="Italic"/>
+            <TextBlock Name="TestCaseName"  Margin="0 10 0 30" HorizontalAlignment="Center" FontSize="20" FontStyle="Italic"
+                       Text="{Binding Path=CurrentTestCase.CaseName}"/>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button Content="Previous" Width="100" Margin="0 0 10 0" Click="PreviousButton_Click" /> 

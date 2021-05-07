@@ -10,7 +10,7 @@ namespace RegressionTestingLifeSaver.Models
     /// Corresponds to Test Cases.
     /// e.g. Image Viewer / PDF Viewer / Viewer Permissions etc.
     /// </summary>
-    public class TestCase
+    public class TestCase 
     {
         public List<Test> Tests { get; set; }
 

@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Models\ObservableObject.cs" />
     <Compile Include="Pages\TestCaseStartPage.xaml.cs">
       <DependentUpon>TestCaseStartPage.xaml</DependentUpon>
     </Compile>

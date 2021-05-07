@@ -30,9 +30,6 @@ namespace RegressionTestingLifeSaver.Pages
 
             this.testPlanViewModel = testPlanViewModel;
             DataContext = this.testPlanViewModel;
-
-
-            TestCaseName.Text = this.testPlanViewModel.CurrentTestCase.CaseName;
         }
 
         private void PreviousButton_Click(object sender, RoutedEventArgs e)

@@ -13,7 +13,6 @@ namespace RegressionTestingLifeSaver.Models
     public class TestPlan
     {
         public List<TestCase> TestCases { get; set; }
-
         public string PlanName { get; set; }
         public string Tester { get; set; }
         public string Database { get; set; }
