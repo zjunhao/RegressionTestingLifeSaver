@@ -51,8 +51,8 @@
 
             <TextBlock Text="Client Type: " Grid.Row="3" Grid.Column="0"/>
             <ComboBox Grid.Row="3" Grid.Column="1" Style="{StaticResource ModuleInfoTextbox}"
-                      SelectedItem="{Binding Path=TestPlan.ClientType}"
-                      ItemsSource="{Binding Path=ClientTypes}" />
+                      Name="ClientTypeComboBox"
+                      SelectedItem="{Binding Path=TestPlan.ClientType}" />
 
             <TextBlock Text="Client Version: " Grid.Row="4" Grid.Column="0"/>
             <TextBox Text="{Binding Path=TestPlan.ClientVersion}" Grid.Row="4" Grid.Column="1" Style="{StaticResource ModuleInfoTextbox}"/>

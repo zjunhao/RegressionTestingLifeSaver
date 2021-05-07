@@ -25,21 +25,15 @@ namespace RegressionTestingLifeSaver.Pages
     {
         public TestPlanViewModel testPlanViewModel;
 
-        /// <summary>
-        /// All available client types for testing.
-        /// </summary>
-        public List<string> ClientTypes { get; }
-
-
 
         public TestPlanStartPage(TestPlanViewModel testPlanViewModel)
         {
             InitializeComponent();
 
-            this.ClientTypes = GetClientTypes();
-
             this.testPlanViewModel = testPlanViewModel;
             DataContext = this.testPlanViewModel;
+
+            this.ClientTypeComboBox.ItemsSource = GetClientTypes();
         }
 
         /// <summary>
