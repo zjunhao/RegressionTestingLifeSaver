@@ -14,16 +14,16 @@
             
             <StackPanel Orientation="Horizontal" Margin="0 20">
                 <TextBlock Text="Time taken for current test case: "/>
-                <TextBox Width="50" Margin="10 0 5 0"/>
+                <TextBox Width="50" Margin="10 0 5 0" Text="{Binding Path=CurrentTestCase.TimeTakenHours}" />
                 <TextBlock Text="hrs"/>
-                <TextBox Width="50" Margin="10 0 5 0"/>
+                <TextBox Width="50" Margin="10 0 5 0" Text="{Binding Path=CurrentTestCase.TimeTakenMinutes}"/>
                 <TextBlock Text="mins"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Notes"/>
                 <TextBox Width="750" Height="120" Margin="10 0 0 20" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible"
-                         Text="{Binding CurrentTestCase.Note}"/>
+                         Text="{Binding Path=CurrentTestCase.Note}"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">

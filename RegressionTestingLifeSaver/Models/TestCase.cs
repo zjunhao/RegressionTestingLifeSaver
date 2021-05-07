@@ -16,7 +16,15 @@ namespace RegressionTestingLifeSaver.Models
 
         public string CaseName { get; set; }
 
-        public int TimeTaken { get; set; }
+        /// <summary>
+        /// TimeTakenHours hrs and TimeTakenMinutes mins for total time taken for testing current test case.
+        /// </summary>
+        public int TimeTakenHours { get; set; }
+
+        /// <summary>
+        /// TimeTakenHours hrs and TimeTakenMinutes mins for total time taken for testing current test case.
+        /// </summary>
+        public int TimeTakenMinutes { get; set; }
 
         public string Note { get; set; }
     }
