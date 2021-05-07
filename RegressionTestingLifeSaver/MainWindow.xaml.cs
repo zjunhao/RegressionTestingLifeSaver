@@ -39,8 +39,8 @@ namespace RegressionTestingLifeSaver
             TestPlan testPlan = MockDataSourceService.populateTestPlan(1993);
             
             this.testPlanViewModel = new TestPlanViewModel(testPlan, PageIndex.TestPlanStart, 0, 0);
-            this.testPlanViewModel.MoveNextClicked += MoveNextHandler;
-            this.testPlanViewModel.MovePreviousClicked += MovePreviousHandler;
+            this.testPlanViewModel.MoveNextClicked += SwitchPage;
+            this.testPlanViewModel.MovePreviousClicked += SwitchPage;
 
             this.testPlanStartPage = new TestPlanStartPage(this.testPlanViewModel);
             this.testCaseStartPage = new TestCaseStartPage(this.testPlanViewModel);
@@ -52,31 +52,7 @@ namespace RegressionTestingLifeSaver
             mainFrame.NavigationService.Navigate(this.testPlanStartPage);
         }
 
-        private void MoveNextHandler()
-        {
-            if (testPlanViewModel.CurrentPageIndex == PageIndex.TestDetail)
-            {
-                mainFrame.NavigationService.Navigate(this.testDetailPage);
-            }
-            else if (testPlanViewModel.CurrentPageIndex == PageIndex.TestCaseStart)
-            {
-                mainFrame.NavigationService.Navigate(this.testCaseStartPage);
-            }
-            else if (testPlanViewModel.CurrentPageIndex == PageIndex.TestCaseEnd)
-            {
-                mainFrame.NavigationService.Navigate(this.testCaseEndPage);
-            }
-            else if (testPlanViewModel.CurrentPageIndex == PageIndex.TestPlanEnd)
-            {
-                mainFrame.NavigationService.Navigate(this.testPlanEndPage);
-            }
-            else if (testPlanViewModel.CurrentPageIndex == PageIndex.TestPlanStart)
-            {
-                mainFrame.NavigationService.Navigate(this.testPlanStartPage);
-            }
-        }
-
-        private void MovePreviousHandler()
+        private void SwitchPage()
         {
             if (testPlanViewModel.CurrentPageIndex == PageIndex.TestDetail)
             {

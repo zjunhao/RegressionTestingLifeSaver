@@ -212,7 +212,9 @@ namespace RegressionTestingLifeSaver.ViewModels
 
     }
 
-    // Combines with currentTestCaseIndex and currentTestIndex to uniquely identify what exact page the user is at.
+    /// <summary>
+    /// Combines with currentTestCaseIndex and currentTestIndex to uniquely identify what exact page the user is at.
+    /// </summary>
     public enum PageIndex
     {
         TestPlanStart,
